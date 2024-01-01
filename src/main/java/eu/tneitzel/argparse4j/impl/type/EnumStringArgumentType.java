@@ -60,7 +60,7 @@ public class EnumStringArgumentType<T extends Enum<T>> implements
      *         The type of the enum
      * @param type
      *            type of the enum the {@code EnumStringArgumentType} should convert to
-     * @return an {@code EnumStringArgumentType} that converts Strings to {@code type} 
+     * @return an {@code EnumStringArgumentType} that converts Strings to {@code type}
      */
     public static <T extends Enum<T>> EnumStringArgumentType<T> forEnum(Class<T> type) {
         return new EnumStringArgumentType<>(type);
@@ -92,7 +92,7 @@ public class EnumStringArgumentType<T extends Enum<T>> implements
      * The inferred metavar contains all enum constant string representation,
      * obtained by calling their {@link Object#toString()} method.
      * </p>
-     * 
+     *
      * @see eu.tneitzel.argparse4j.inf.MetavarInference#inferMetavar()
      * @since 0.7.0
      */

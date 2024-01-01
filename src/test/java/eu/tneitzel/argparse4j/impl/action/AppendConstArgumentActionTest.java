@@ -39,7 +39,7 @@ import org.junit.Test;
 public class AppendConstArgumentActionTest {
 
     private static class MyMockArgument extends MockArgument {
-        
+
         @Override
         public String getDest() {
             return "dest";
@@ -49,18 +49,18 @@ public class AppendConstArgumentActionTest {
         public Object getConst() {
             return "const";
         }
-        
+
     }
-    
+
     private MyMockArgument arg = new MyMockArgument();
     private AppendConstArgumentAction act = new AppendConstArgumentAction();
     private Map<String, Object> attrs;
-    
+
     @Before
     public void setup() {
         attrs = new HashMap<>();
     }
-    
+
     @Test
     public void testRun() {
         act.run(null, arg, attrs, null, null);

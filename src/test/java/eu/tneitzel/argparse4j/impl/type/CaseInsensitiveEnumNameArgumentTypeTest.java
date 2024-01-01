@@ -77,7 +77,7 @@ public class CaseInsensitiveEnumNameArgumentTypeTest {
                     e.getMessage());
         }
     }
-    
+
     @Test
     public void testIgnoresLocaleOfParserForCaseInsensitivity() {
         Locale turkish = new Locale("tr");

@@ -59,7 +59,7 @@ import eu.tneitzel.argparse4j.inf.MetavarInference;
  * strings, and application can specify what strings are used as true or false
  * value.
  * </p>
- * 
+ *
  * @since 0.7.0
  */
 public class BooleanArgumentType implements ArgumentType<Boolean>,
@@ -75,7 +75,7 @@ public class BooleanArgumentType implements ArgumentType<Boolean>,
 
     /**
      * Creates BooleanArgumentType with given values.
-     * 
+     *
      * @param trueValue
      *            string used as true value
      * @param falseValue
@@ -108,7 +108,7 @@ public class BooleanArgumentType implements ArgumentType<Boolean>,
      * <p>
      * Infers metavar based on given strings.
      * </p>
-     * 
+     *
      * @see eu.tneitzel.argparse4j.inf.MetavarInference#inferMetavar()
      */
     @Override

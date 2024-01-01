@@ -50,7 +50,7 @@ import eu.tneitzel.argparse4j.inf.FeatureControl;
  * <p>
  * This class provides useful shortcuts and constants.
  * </p>
- * 
+ *
  * <p>
  * They are mainly used to specify parameter to {@link Argument} object.
  * </p>
@@ -99,7 +99,7 @@ public final class Arguments {
      * <p>
      * The value of {@link FeatureControl#SUPPRESS}.
      * </p>
-     * 
+     *
      * <p>
      * If value is used with {@link Argument#setDefault(FeatureControl)}, no
      * attribute is added if the command line argument was not present.
@@ -112,7 +112,7 @@ public final class Arguments {
 
     /**
      * Returns store action.
-     * 
+     *
      * @return {@link StoreArgumentAction} object.
      */
     public static StoreArgumentAction store() {
@@ -123,12 +123,12 @@ public final class Arguments {
      * <p>
      * Returns storeTrue action.
      * </p>
-     * 
+     *
      * <p>
      * If this action is used, the value specified using
      * {@link Argument#nargs(int)} will be ignored.
      * </p>
-     * 
+     *
      * @return {@link StoreTrueArgumentAction} object.
      */
     public static StoreTrueArgumentAction storeTrue() {
@@ -139,12 +139,12 @@ public final class Arguments {
      * <p>
      * Returns storeFalse action.
      * </p>
-     * 
+     *
      * <p>
      * If this action is used, the value specified using
      * {@link Argument#nargs(int)} will be ignored.
      * </p>
-     * 
+     *
      * @return {@link StoreFalseArgumentAction} object.
      */
     public static StoreFalseArgumentAction storeFalse() {
@@ -155,12 +155,12 @@ public final class Arguments {
      * <p>
      * Returns storeConst action.
      * </p>
-     * 
+     *
      * <p>
      * If this action is used, the value specified using
      * {@link Argument#nargs(int)} will be ignored.
      * </p>
-     * 
+     *
      * @return {@link StoreConstArgumentAction} object.
      */
     public static StoreConstArgumentAction storeConst() {
@@ -176,7 +176,7 @@ public final class Arguments {
      * used with {@link Argument#nargs(int)}, the element of List will be List.
      * This is because {@link Argument#nargs(int)} produces List.
      * </p>
-     * 
+     *
      * @return {@link AppendArgumentAction} object.
      */
     public static AppendArgumentAction append() {
@@ -191,7 +191,7 @@ public final class Arguments {
      * If this action is used, the value specified using
      * {@link Argument#nargs(int)} will be ignored.
      * </p>
-     * 
+     *
      * @return {@link AppendConstArgumentAction} object.
      */
     public static AppendConstArgumentAction appendConst() {
@@ -206,7 +206,7 @@ public final class Arguments {
      * This is used for an option printing help message. Please note that this
      * action terminates program after printing help message.
      * </p>
-     * 
+     *
      * @return {@link HelpArgumentAction} object.
      */
     public static HelpArgumentAction help() {
@@ -221,7 +221,7 @@ public final class Arguments {
      * This is used for an option printing version message. Please note that
      * this action terminates program after printing version message.
      * </p>
-     * 
+     *
      * @return {@link VersionArgumentAction} object.
      */
     public static VersionArgumentAction version() {
@@ -236,7 +236,7 @@ public final class Arguments {
      * This action counts the number of occurrence of the option. This action
      * does not consume argument.
      * </p>
-     * 
+     *
      * @return {@link CountArgumentAction} object.
      */
     public static CountArgumentAction count() {
@@ -251,7 +251,7 @@ public final class Arguments {
      * Since enum does not have a constructor with string argument, you cannot
      * use {@link Argument#type(Class)}. Instead use this convenient function.
      * </p>
-     * 
+     *
      * @deprecated
      *
      * @param <T>
@@ -269,7 +269,7 @@ public final class Arguments {
      * <p>
      * Returns new {@link FileArgumentType} object.
      * </p>
-     * 
+     *
      * @return {@link FileArgumentType} object
      */
     public static FileArgumentType fileType() {
@@ -338,7 +338,7 @@ public final class Arguments {
      * @return {@link CaseInsensitiveEnumStringArgumentType} object
      * @since 0.8.0
      */
-    public static <T extends Enum<T>> CaseInsensitiveEnumStringArgumentType<T> 
+    public static <T extends Enum<T>> CaseInsensitiveEnumStringArgumentType<T>
             caseInsensitiveEnumStringType(Class<T> type) {
         return new CaseInsensitiveEnumStringArgumentType<>(type);
     }
@@ -353,7 +353,7 @@ public final class Arguments {
      * between the use of {@link BooleanArgumentType} and passing
      * {@link Boolean} class to {@link Argument#type(Class)}.
      * </p>
-     * 
+     *
      * @return The BooleanArgumentType object
      * @since 0.7.0
      */
@@ -370,7 +370,7 @@ public final class Arguments {
      * between the use of {@link BooleanArgumentType} and passing
      * {@link Boolean} class to {@link Argument#type(Class)}.
      * </p>
-     * 
+     *
      * @param trueValue
      *            string used as true value
      * @param falseValue

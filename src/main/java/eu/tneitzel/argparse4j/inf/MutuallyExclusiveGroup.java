@@ -35,7 +35,7 @@ public interface MutuallyExclusiveGroup extends ArgumentContainer {
      * <p>
      * The default value is {@code false}.
      * </p>
-     * 
+     *
      * @param required
      *            {@code true} or {@code false}
      * @return this

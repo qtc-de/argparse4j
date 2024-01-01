@@ -170,7 +170,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
 
     /**
      * Set text to display before the argument help.
-     * 
+     *
      * @param description
      *            text to display before the argument help
      * @return this
@@ -227,7 +227,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
         printUsage(writer, formatWidth);
         if (!description_.isEmpty()) {
             writer.println();
-            writer.println(TextHelper.wrap(config_.textWidthCounter_, 
+            writer.println(TextHelper.wrap(config_.textWidthCounter_,
                    description_, formatWidth, 0, "", ""));
         }
         boolean subparsersUntitled = subparsers_.getTitle().isEmpty()
@@ -402,7 +402,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
     /**
      * Returns arguments in {@code args} whose {@link Argument#getHelpControl()}
      * do not return {@link Arguments#SUPPRESS}.
-     * 
+     *
      * @param args arguments to filter
      * @return filtered list of arguments
      */
@@ -421,7 +421,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
      * Appends command, required named arguments and positional arguments in
      * {@code parser} to {@code opts} recursively. Most upper parser stores
      * first, just like post order traversal.
-     * 
+     *
      * @param opts
      *            Command, required named arguments and positional arguments.
      * @param parser
@@ -503,7 +503,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
      * while parser-level defaults always override argument-level defaults while
      * parsing, this method examines argument-level defaults first. If no
      * default value is found, then check parser-level defaults.
-     * 
+     *
      * @param dest
      *            attribute name of default value to get.
      * @return default value of given dest.
@@ -710,7 +710,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
      * Check that term forms a valid concatenated short options. Note that this
      * option does not actually process arguments. Therefore, true from this
      * function does not mean all arguments in term are acceptable.
-     * 
+     *
      * @param term
      *            string to inspect
      * @return true if term forms a valid concatenated short options.
@@ -738,7 +738,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
      * function handles abbreviation as well. If flag is ambiguous,
      * {@link ArgumentParserException} will be thrown. If flag does not match
      * any ArgumentImpl, this function returns null.
-     * 
+     *
      * @param flag
      *            flag to match
      * @return ArgumentImpl which matches flag if it succeeds, or null
@@ -880,7 +880,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
 
     /**
      * Format message for "Unrecognized arguments" error.
-     * 
+     *
      * @param state
      *            Current parser state
      * @param args
@@ -908,7 +908,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
     /**
      * Check that another option in mutually exclusive group has already been
      * specified. If so, throw an exception.
-     * 
+     *
      * @param arg
      *            The argument currently processed
      * @param groupUsed
@@ -937,7 +937,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
 
     /**
      * This function only handles a named argument.
-     * 
+     *
      * @param embeddedValue
      *            If named argument is given as "foo=bar" or "-fbar" (short
      *            option), embedded value is "bar". Otherwise {@code null}
@@ -1148,7 +1148,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
 
     /**
      * Extends arguments by reading additional arguments from file.
-     * 
+     *
      * @param state
      *            Current parser state.
      * @param file
@@ -1284,7 +1284,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
     public void handleError(ArgumentParserException e) {
         handleError(e, new PrintWriter(System.err));
     }
-    
+
     @Override
     public void handleError(ArgumentParserException e, PrintWriter writer) {
         if (e.getParser() != this) {
@@ -1321,7 +1321,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
     /**
      * Calculates Damerau–Levenshtein distance between string {@code a} and
      * {@code b} with given costs.
-     * 
+     *
      * @param a
      *            String
      * @param b
@@ -1447,7 +1447,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
     /**
      * Prints most similar subjects in subjects to body. Similarity is
      * calculated between body and each {@link SubjectBody#body} in subjects.
-     * 
+     *
      * @param body
      *            String to compare.
      * @param subjects
@@ -1490,7 +1490,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
     /**
      * Replace placeholder in src with actual value. The only known placeholder
      * is <tt>${prog}</tt>, which is replaced with {@code config_.prog_}.
-     * 
+     *
      * @param src
      *            string to be processed
      * @return the substituted string
@@ -1518,7 +1518,7 @@ public final class ArgumentParserImpl implements ArgumentParser {
 
     /**
      * Returns main (parent) parser.
-     * 
+     *
      * @return The main (parent) parser. null if this object is a root parser.
      */
     ArgumentParserImpl getMainParser() {
@@ -1528,5 +1528,33 @@ public final class ArgumentParserImpl implements ArgumentParser {
     String localize(String messageKey) {
         return MessageLocalization.localize(config_.getResourceBundle(),
                 messageKey);
+    }
+
+    @Override
+    public ArgumentGroup getArgumentGroup(String title)
+    {
+        for (ArgumentGroupImpl group : argGroups_)
+        {
+            if (group.getTitle().equals(title))
+            {
+                return group;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public ArgumentGroup getOrCreateArgumentGroup(String title)
+    {
+        for (ArgumentGroupImpl group : argGroups_)
+        {
+            if (group.getTitle().equals(title))
+            {
+                return group;
+            }
+        }
+
+        return addArgumentGroup(title);
     }
 }

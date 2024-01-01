@@ -43,7 +43,7 @@ public final class ReflectHelper {
      * <p>
      * Convert {@code src} to object of type {@code targetType} recursively
      * </p>
-     * 
+     *
      * <p>
      * Convert {@code src} to object of type {@code targetType} recursively, but
      * it only converts {@link List} to array. If {@code targetType} is array
@@ -55,7 +55,7 @@ public final class ReflectHelper {
      * {@code targetType} is not array or {@code src} is not {@link List},
      * simply returns {@code src}.
      * </p>
-     * 
+     *
      * @param targetType
      *            The target type
      * @param src

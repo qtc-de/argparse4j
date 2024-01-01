@@ -132,7 +132,7 @@ public final class ArgumentImpl implements Argument {
 
     /**
      * Short syntax is used in usage message, e.g. --foo BAR
-     * 
+     *
      * @return short syntax
      */
     String formatShortSyntax() {
@@ -158,7 +158,7 @@ public final class ArgumentImpl implements Argument {
     /**
      * Short syntax is used in usage message, e.g. --foo BAR, but without
      * bracket when this is not required option.
-     * 
+     *
      * @return short syntax
      */
     String formatShortSyntaxNoBracket() {

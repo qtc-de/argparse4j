@@ -37,7 +37,7 @@ import eu.tneitzel.argparse4j.inf.ArgumentParserException;
  * <p>
  * Argument action to store a list.
  * </p>
- * 
+ *
  * <p>
  * This action appends each argument value to the list. The list is of type
  * {@link java.util.List}. This is useful to allow an option to be specified

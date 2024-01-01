@@ -25,7 +25,7 @@ import eu.tneitzel.argparse4j.inf.ArgumentParser;
  * <p>
  * <strong>The application code should not use this class directly.</strong>
  * </p>
- * 
+ *
  * @since 0.8.0
  */
 public class TypeNameLocalization {

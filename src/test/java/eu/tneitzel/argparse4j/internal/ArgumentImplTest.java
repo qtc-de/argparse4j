@@ -85,7 +85,7 @@ public class ArgumentImplTest {
         assertEquals("foo_bar", arg.getDest());
         assertEquals("FOO_BAR", arg.resolveMetavar()[0]);
     }
-    
+
     @Test(expected = IllegalArgumentException.class)
     public void testNargsWithZero() {
         ArgumentImpl arg = new ArgumentImpl(config_, "--foo");
@@ -102,7 +102,7 @@ public class ArgumentImplTest {
         assertEquals("{alpha,bravo}", arg.resolveMetavar()[0]);
         arg.metavar("baz");
         assertEquals("baz", arg.resolveMetavar()[0]);
-        
+
         arg = new ArgumentImpl(config_, "foo");
         assertEquals("foo", arg.resolveMetavar()[0]);
         arg.dest("bar");
@@ -112,7 +112,7 @@ public class ArgumentImplTest {
         arg.metavar("baz");
         assertEquals("baz", arg.resolveMetavar()[0]);
     }
-    
+
     @Test
     public void testTextualName() {
         ArgumentImpl arg = new ArgumentImpl(config_, "f");

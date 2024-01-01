@@ -277,7 +277,7 @@ public class ArgumentParserImplTest {
         assertEquals("XX", res.get("bar"));
         res = ap.parseArgs(new String[] {});
         assertEquals("d", res.get("foo"));
-        assertEquals("d", res.get("bar"));        
+        assertEquals("d", res.get("bar"));
     }
 
     @Test
@@ -383,8 +383,8 @@ public class ArgumentParserImplTest {
             assertEquals(String.format(
                         TextHelper.LOCALE_ROOT,
                         "unrecognized arguments: '-x'%n" +
-            		"Checking trailing white spaces or new lines in @file may help."),
-            		e.getMessage());
+                    "Checking trailing white spaces or new lines in @file may help."),
+                    e.getMessage());
         }
         try {
             // -x is not from file, so no additional help.
@@ -401,8 +401,8 @@ public class ArgumentParserImplTest {
             assertEquals(String.format(
                         TextHelper.LOCALE_ROOT,
                         "unrecognized arguments: '-x'%n" +
-            		"Checking trailing white spaces or new lines in @file may help."),
-            		e.getMessage());
+                    "Checking trailing white spaces or new lines in @file may help."),
+                    e.getMessage());
         }
         try {
             // Check range is updated by args5.txt (non-overlap case).
@@ -412,8 +412,8 @@ public class ArgumentParserImplTest {
             assertEquals(String.format(
                         TextHelper.LOCALE_ROOT,
                         "unrecognized arguments: '-x'%n" +
-            		"Checking trailing white spaces or new lines in @file may help."),
-            		e.getMessage());
+                    "Checking trailing white spaces or new lines in @file may help."),
+                    e.getMessage());
         }
         try {
             // Unrecognized non-flag arguments
@@ -422,8 +422,8 @@ public class ArgumentParserImplTest {
             assertEquals(String.format(
                         TextHelper.LOCALE_ROOT,
                         "unrecognized arguments: ' b'%n" +
-            		"Checking trailing white spaces or new lines in @file may help."),
-            		e.getMessage());
+                    "Checking trailing white spaces or new lines in @file may help."),
+                    e.getMessage());
         }
         // Multiple fromFilePrefix
         ap = (ArgumentParserImpl) ArgumentParsers.newFor("argparse4j")
@@ -437,8 +437,8 @@ public class ArgumentParserImplTest {
             assertEquals(String.format(
                         TextHelper.LOCALE_ROOT,
                         "unrecognized arguments: '-x'%n" +
-            		"Checking trailing white spaces or new lines in [@/]file may help."),
-            		e.getMessage());
+                    "Checking trailing white spaces or new lines in [@/]file may help."),
+                    e.getMessage());
         }
     }
 
@@ -959,7 +959,7 @@ public class ArgumentParserImplTest {
                     e.getMessage());
         }
     }
-    
+
     @Test
     public void testSubparsersDest() throws ArgumentParserException {
         Subparsers subparsers = ap.addSubparsers().dest("command");
@@ -1014,7 +1014,7 @@ public class ArgumentParserImplTest {
             String name;
             @Arg
             String host;
-            
+
             private int[] ints;
 
             @Arg(dest = "attrs")
@@ -1040,13 +1040,13 @@ public class ArgumentParserImplTest {
         assertEquals("alice", out.name);
         assertEquals("example.com", out.host);
         assertArrayEquals(new int[] { 1, 2, 3 }, out.getInts());
-        
+
         // Test inheritance
         class SubOut extends Out {
-        	@Arg
+            @Arg
             private int port;
         }
-        
+
         ap.addArgument("--port").type(Integer.class);
         SubOut subOut = new SubOut();
         ap.parseArgs("--username alice --host example.com --port 8080 --attrs 1 2 3".split(" "), subOut);
@@ -1054,7 +1054,7 @@ public class ArgumentParserImplTest {
         assertEquals("example.com", subOut.host);
         assertArrayEquals(new int[] { 1, 2, 3 }, subOut.getInts());
         assertEquals(8080, subOut.port);
-        
+
     }
 
     @Test
@@ -1165,9 +1165,9 @@ public class ArgumentParserImplTest {
                 + "%n"
                 + "  --bar BAR              bar help%n"),
                 ap.formatHelp());
-  
+
     }
-    
+
     @Test
     public void testFormatHelpWithMutexGroup() {
         ap.description("This is argparse4j.").epilog("This is epilog.");
@@ -1292,7 +1292,7 @@ public class ArgumentParserImplTest {
                    + "  -f F%n"
                    + "  -g G%n"),
                    ap.formatHelp());
-        // Check upper parsers's suppressed required arguments are not shown. 
+        // Check upper parsers's suppressed required arguments are not shown.
         assertEquals(String.format(
                      TextHelper.LOCALE_ROOT,
                      "usage: argparse4j (-f F | -g G) s t add [-h] [-j J]%n"
@@ -1503,7 +1503,7 @@ public class ArgumentParserImplTest {
         assertNotEquals(foo.hashCode(), bar.hashCode());
         assertNotEquals(foo.hashCode(), subNull.hashCode());
     }
-    
+
     @Test (expected=HelpScreenException.class)
     public void testHelpThrowsHelpScreenException() throws ArgumentParserException {
         ap.parseArgs(new String[]{"--help"});

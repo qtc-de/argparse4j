@@ -27,7 +27,7 @@ import eu.tneitzel.argparse4j.inf.ArgumentType;
 
 /**
  * ArgumentType subclass for File type, using fluent style API.
- * 
+ *
  * This object can convert path string to {@link java.io.File} object. The
  * command-line programs traditionally accept the file path "-" as standard
  * input. This object supports this when
@@ -46,7 +46,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * If the argument is "-", accept it as standard input. If this method is
      * used, all verification methods will be ignored.
-     * 
+     *
      * @return this
      */
     public FileArgumentType acceptSystemIn() {
@@ -57,7 +57,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path exists. If the verification fails, error
      * will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyExists() {
@@ -68,7 +68,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path does not exist. If the verification
      * fails, error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyNotExists() {
@@ -79,7 +79,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path is a regular file. If the verification
      * fails, error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyIsFile() {
@@ -90,7 +90,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path is a directory. If the verification
      * fails, error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyIsDirectory() {
@@ -101,7 +101,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path is readable. If the verification fails,
      * error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyCanRead() {
@@ -112,7 +112,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path is writable. If the verification fails,
      * error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyCanWrite() {
@@ -123,7 +123,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the parent directory of the specified path is writable. If
      * the verification fails, error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyCanWriteParent() {
@@ -134,7 +134,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path is writable. If the verification fails,
      * error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyCanCreate() {
@@ -145,7 +145,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path is executable. If the verification
      * fails, error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyCanExecute() {
@@ -156,7 +156,7 @@ public class FileArgumentType implements ArgumentType<File> {
     /**
      * Verifies that the specified path is an absolute path. If the verification
      * fails, error will be reported.
-     * 
+     *
      * @return this
      */
     public FileArgumentType verifyIsAbsolute() {

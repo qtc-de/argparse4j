@@ -60,7 +60,7 @@ public class CaseInsensitiveEnumStringArgumentType<T extends Enum<T>>
      * @return a {@code CaseInsensitiveEnumStringArgumentType} that converts
      * Strings to {@code type}
      */
-    public static <T extends Enum<T>> CaseInsensitiveEnumStringArgumentType<T> 
+    public static <T extends Enum<T>> CaseInsensitiveEnumStringArgumentType<T>
             forEnum(Class<T> type) {
         return new CaseInsensitiveEnumStringArgumentType<>(type);
     }

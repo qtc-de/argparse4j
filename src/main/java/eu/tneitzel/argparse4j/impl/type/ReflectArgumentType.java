@@ -42,7 +42,7 @@ import eu.tneitzel.argparse4j.inf.MetavarInference;
  * <p>
  * This implementation converts String value into given type using type's
  * {@code valueOf(java.lang.String)} static method or its constructor.
- * 
+ *
  * This class implements {@link MetavarInference} interface, and performs
  * special handling when {@link Boolean} class is passed to the constructor. In
  * that case, {@link ReflectArgumentType#inferMetavar()} returns convenient
@@ -87,7 +87,7 @@ public class ReflectArgumentType<T> implements ArgumentType<T>,
      * account {@link Enum#toString()} on conversion, use
      * {@link Arguments#enumStringType(Class)} instead.
      * </p>
-     * 
+     *
      * @param type
      *            The type String value should be converted to.
      */
@@ -191,7 +191,7 @@ public class ReflectArgumentType<T> implements ArgumentType<T>,
      * <p>
      * Otherwise, returns null.
      * </p>
-     * 
+     *
      * @see eu.tneitzel.argparse4j.inf.MetavarInference#inferMetavar()
      * @since 0.7.0
      */

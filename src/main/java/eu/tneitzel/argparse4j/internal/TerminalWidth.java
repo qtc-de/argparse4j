@@ -26,9 +26,9 @@ import java.util.regex.Pattern;
 /**
  * Returns the column width of the command line terminal from which this program
  * was started. Typically the column width is around 80 characters or so.
- * 
+ *
  * Currently works on Linux and OSX.
- * 
+ *
  * Returns -1 if the column width cannot be determined for some reason.
  */
 public class TerminalWidth {

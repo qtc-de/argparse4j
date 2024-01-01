@@ -18,7 +18,7 @@ import eu.tneitzel.argparse4j.internal.TerminalWidth;
 /**
  * ArgumentParserBuilder is a class to build new ArgumentParser with a given
  * custom configuration.
- * 
+ *
  * @since 0.8.0
  */
 public class ArgumentParserBuilder {

@@ -44,7 +44,7 @@ public class CollectionArgumentChoice<E> implements ArgumentChoice {
 
     /**
      * Initializes this object from given values.
-     * 
+     *
      * @param values
      *            Valid values
      */
@@ -55,7 +55,7 @@ public class CollectionArgumentChoice<E> implements ArgumentChoice {
 
     /**
      * Initializes this object from given values.
-     * 
+     *
      * @param values
      *            Valid values
      */

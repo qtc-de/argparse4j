@@ -38,7 +38,7 @@ public interface ArgumentChoice {
      * of invalid input from command line, subclass must catch these exceptions
      * and return {@code false}.
      * </p>
-     * 
+     *
      * @param val
      *            The attribute value.
      * @return {@code true} or {@code false}.
@@ -52,7 +52,7 @@ public interface ArgumentChoice {
      * <p>
      * This string will be used in help and error messages.
      * </p>
-     * 
+     *
      * @return The textual representation of this choice.
      */
     String textualFormat();

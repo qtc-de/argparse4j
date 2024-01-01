@@ -41,7 +41,7 @@ public class PrefixPattern {
 
     /**
      * Creates this object using given {@code prefixChars}.
-     * 
+     *
      * @param prefixChars
      *            The prefixChars
      */
@@ -52,7 +52,7 @@ public class PrefixPattern {
 
     /**
      * Returns {@code true} if flag string {@code str} matches prefixChars.
-     * 
+     *
      * @param str
      *            The flag string to match
      * @return {@code true} or {@code false}
@@ -65,7 +65,7 @@ public class PrefixPattern {
     /**
      * Returns {@code true} if flag string {@code str} matches prefixChars and
      * it is long flag.
-     * 
+     *
      * @param str
      *            The flag string to match
      * @return {@code true} or {@code false}
@@ -78,7 +78,7 @@ public class PrefixPattern {
     /**
      * Returns {@code true} if flag string {@code str} matches prefixChars and
      * it is short flag, that is, its matched prefix length must be 1.
-     * 
+     *
      * @param str
      *            The flag string to match
      * @return {@code true} or {@code false}
@@ -95,7 +95,7 @@ public class PrefixPattern {
      * <p>
      * If given flag string does not contains prefixChars, it is returned as is.
      * </p>
-     * 
+     *
      * @param str
      *            The flag string
      * @return The string after prefixChars are removed from {@code str}
@@ -111,7 +111,7 @@ public class PrefixPattern {
 
     /**
      * Returns prefixChars with this object constructed.
-     * 
+     *
      * @return prefixChars
      */
     public String getPrefixChars() {
@@ -120,7 +120,7 @@ public class PrefixPattern {
 
     /**
      * Returns compiled regular expression pattern of prefixChars.
-     * 
+     *
      * @return The compiled regular expression pattern of prefixChars.
      */
     public Pattern getPrefixPattern() {

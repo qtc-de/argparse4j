@@ -27,7 +27,7 @@ package eu.tneitzel.argparse4j.helper;
  * <p>
  * This implementation assumes text contains only narrow characters,
  * </p>
- * 
+ *
  * <p>
  * The width is just simply the length of given text. <strong>The application
  * code should not use this class directly.</strong>

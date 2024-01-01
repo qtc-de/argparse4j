@@ -45,7 +45,7 @@ import eu.tneitzel.argparse4j.inf.ArgumentType;
  * occurred in other locations, subclass of {@link RuntimeException} will be
  * thrown.
  * </p>
- * 
+ *
  * @deprecated Use {@link ReflectArgumentType} instead.
  */
 @Deprecated
@@ -60,7 +60,7 @@ public class ConstructorArgumentType<T> implements ArgumentType<T> {
      * <p>
      * The constructor of {@code type} must have 1 String argument.
      * </p>
-     * 
+     *
      * @param type
      *            The type String value should be converted to.
      */

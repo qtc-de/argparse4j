@@ -288,4 +288,16 @@ public final class SubparserImpl implements Subparser, ArgumentParser {
     FeatureControl getHelpControl() {
         return helpControl_;
     }
+
+    @Override
+    public ArgumentGroup getArgumentGroup(String title)
+    {
+        return parser_.getArgumentGroup(title);
+    }
+
+    @Override
+    public ArgumentGroup getOrCreateArgumentGroup(String title)
+    {
+        return parser_.getOrCreateArgumentGroup(title);
+    }
 }

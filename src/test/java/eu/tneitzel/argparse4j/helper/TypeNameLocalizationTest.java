@@ -17,7 +17,7 @@ public class TypeNameLocalizationTest {
                 .build();
 
         String displayName = localizeTypeNameIfPossible(parser, Integer.class);
-        
+
         assertEquals("integer (32 bits)", displayName);
     }
 
@@ -42,10 +42,10 @@ public class TypeNameLocalizationTest {
 
         assertEquals("custom type", displayName);
     }
-    
+
     private static class CustomTypeWithoutResourceBundle {
     }
-    
+
     private static class CustomTypeWithResourceBundle {
     }
 }

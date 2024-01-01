@@ -171,7 +171,7 @@ public class ReflectArgumentTypeTest {
     @Test
     public void testConvertSupertype() throws ArgumentParserException {
         ReflectArgumentType<Base> at = createRA(Base.class);
-	    assertSame(Derived.class, at.convert(null, null, "foo").getClass());
+        assertSame(Derived.class, at.convert(null, null, "foo").getClass());
     }
 
     private static final class NonStringValueOf {

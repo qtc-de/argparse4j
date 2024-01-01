@@ -41,7 +41,7 @@ public interface Argument {
      * converted to {@code int} value and it is not what you expect. For these
      * strings, use {@link #nargs(String)}.
      * </p>
-     * 
+     *
      * @param n
      *            A positive integer
      * @return this
@@ -66,7 +66,7 @@ public interface Argument {
      * option string is present but not followed by a command line argument. In
      * this case the value from {@link #setConst(Object)} will be produced.
      * </p>
-     * 
+     *
      * @param n
      *            {@code "*"}, {@code "+"} or {@code "?"}
      * @return this
@@ -78,11 +78,11 @@ public interface Argument {
      * Sets constant values that are not read from the command line but are
      * required for the various actions.
      * </p>
-     * 
+     *
      * <p>
      * The const value defaults to {@code null}.
      * </p>
-     * 
+     *
      * @param value
      *            The const value
      * @return this
@@ -116,7 +116,7 @@ public interface Argument {
      * <p>
      * The default value defaults to {@code null}.
      * </p>
-     * 
+     *
      * @param value
      *            The default value
      * @return this
@@ -150,7 +150,7 @@ public interface Argument {
      * Currently, only {@link FeatureControl#SUPPRESS} is available. If it is
      * given, default value is not add as a attribute.
      * </p>
-     * 
+     *
      * @param ctrl
      *            The special value to control default value handling.
      * @return this
@@ -209,7 +209,7 @@ public interface Argument {
      * The default value is {@code false}. This object is a positional argument,
      * this property is ignored.
      * </p>
-     * 
+     *
      * @param required
      *            {@code true} or {@code false}
      * @return this
@@ -219,7 +219,7 @@ public interface Argument {
     /**
      * Sets the action to be taken when this argument is encountered at the
      * command line.
-     * 
+     *
      * @param action
      *            {@link ArgumentAction} object
      * @return this
@@ -235,7 +235,7 @@ public interface Argument {
      * This method is useful if more complex inspection is necessary than basic
      * {@link #choices(Object...)}.
      * </p>
-     * 
+     *
      * @param choice
      *            {@link ArgumentChoice} object.
      * @return this
@@ -279,7 +279,7 @@ public interface Argument {
      * initial {@code -} character. Any internal {@code -} characters will be
      * converted to {@code _}.
      * </p>
-     * 
+     *
      * @param dest
      *            The name of the attribute to be added
      * @return this
@@ -288,7 +288,7 @@ public interface Argument {
 
     /**
      * Set the name for the argument in usage messages.
-     * 
+     *
      * @param metavar
      *            The name for the argument in usage messages
      * @return this
@@ -297,7 +297,7 @@ public interface Argument {
 
     /**
      * Sets the brief description of what the argument does.
-     * 
+     *
      * @param help
      *            The brief description of what the argument does
      * @return this
@@ -313,7 +313,7 @@ public interface Argument {
      * given, the help entry for this option is not displayed in the help
      * message.
      * </p>
-     * 
+     *
      * @param ctrl
      *            The special value to control help message handling.
      * @return this
@@ -324,13 +324,13 @@ public interface Argument {
      * <p>
      * Returns textual representation of the argument name.
      * </p>
-     * 
+     *
      * <p>
      * For named arguments, this method returns the first argument given in
      * {@link ArgumentParser#addArgument(String...)}. For positional arguments,
      * this method returns the flags joined with "/", e.g. {@code -f/--foo}.
      * </p>
-     * 
+     *
      * @return The textual representation of the argument name.
      */
     String textualName();
@@ -339,35 +339,35 @@ public interface Argument {
 
     /**
      * Returns dest value.
-     * 
+     *
      * @return The dest value
      */
     String getDest();
 
     /**
      * Returns const value.
-     * 
+     *
      * @return The const value
      */
     Object getConst();
 
     /**
      * Returns default value.
-     * 
+     *
      * @return The default value
      */
     Object getDefault();
 
     /**
      * Returns default control.
-     * 
+     *
      * @return The default control
      */
     FeatureControl getDefaultControl();
 
     /**
      * Returns help control.
-     * 
+     *
      * @return The help control
      */
     FeatureControl getHelpControl();

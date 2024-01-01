@@ -131,7 +131,7 @@ public final class TextHelper {
      * spaces in sb to make it look more "natural". The insertion points are the
      * contiguous block of white spaces. Before the processing, leading and
      * trailing white spaces are removed from sb.
-     * 
+     *
      * @param sb
      *            String to adjust
      * @param width
@@ -235,7 +235,7 @@ public final class TextHelper {
     /**
      * From src, find string whose prefix is prefix and store them in List and
      * return it.
-     * 
+     *
      * @param src
      *            collection contains strings to inspect
      * @param prefix

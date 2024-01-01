@@ -30,7 +30,7 @@ import org.junit.Test;
 public class RangeArgumentChoiceTest {
 
     private RangeArgumentChoice<Integer> choice = new RangeArgumentChoice<>(0, 255);
-    
+
     @Test
     public void testContains() {
         assertFalse(choice.contains(-1));

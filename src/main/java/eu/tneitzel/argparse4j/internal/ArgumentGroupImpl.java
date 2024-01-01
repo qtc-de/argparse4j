@@ -33,7 +33,7 @@ import eu.tneitzel.argparse4j.inf.MutuallyExclusiveGroup;
 
 /**
  * <strong>The application code must not use this class directly.</strong>
- * 
+ *
  * This class implements both mutually exclusive group and just a conceptual
  * group.
  */
@@ -137,11 +137,21 @@ public final class ArgumentGroupImpl implements ArgumentGroup,
     /**
      * Returns true if the help message for this group should be in separate
      * group.
-     * 
+     *
      * @return true if the help message for this group should be in separate
      *         group.
      */
     boolean isSeparateHelp() {
         return !mutex_ || !title_.isEmpty() || !description_.isEmpty();
+    }
+
+    @Override
+    public String getTitle() {
+        return title_;
+    }
+
+    @Override
+    public String getDescription() {
+        return description_;
     }
 }

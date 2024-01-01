@@ -30,12 +30,12 @@ import java.util.Comparator;
  * <p>
  * CJK aware TextWidthCounter implementation.
  * </p>
- * 
+ *
  * <p>
  * This class uses East Asian Width information of Unicode and counts 2 for
  * Wide, Full and Ambiguous characters.
  * </p>
- * 
+ *
  * <p>
  * <strong>The application code should not use this class directly.</strong>
  * </p>

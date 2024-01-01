@@ -44,7 +44,7 @@ public interface ArgumentAction {
      * these exceptions and wrap them in {@link ArgumentParserException} and
      * give simple error message to explain what happened briefly.
      * </p>
-     * 
+     *
      * @param parser
      *            The parser.
      * @param arg
@@ -109,7 +109,7 @@ public interface ArgumentAction {
     /**
      * Called when ArgumentAction is added to {@link Argument} using
      * {@link Argument#action(ArgumentAction)}.
-     * 
+     *
      * @param arg
      *            {@link Argument} object to which this object is added.
      */
@@ -118,7 +118,7 @@ public interface ArgumentAction {
     /**
      * Returns {@code true} if this action consumes argument. Otherwise returns
      * {@code false}.
-     * 
+     *
      * @return {@code true} or {@code false}.
      */
     boolean consumeArgument();

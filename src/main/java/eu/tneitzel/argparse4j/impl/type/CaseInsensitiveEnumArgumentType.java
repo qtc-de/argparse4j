@@ -36,7 +36,7 @@ public class CaseInsensitiveEnumArgumentType<T extends Enum<T>>
 
     /**
      * <p>
-     * Create an instance. 
+     * Create an instance.
      * </p>
      *
      * @param type
@@ -86,7 +86,7 @@ public class CaseInsensitiveEnumArgumentType<T extends Enum<T>>
      * @since 0.8.0
      */
     protected String toStringRepresentation(T t) {
-        return t.name();        
+        return t.name();
     }
 
     /**
@@ -121,7 +121,7 @@ public class CaseInsensitiveEnumArgumentType<T extends Enum<T>>
 
     /**
      * Get the String representation of the given value.
-     * 
+     *
      * @param value
      *            The value for which to get the String representation.
      * @return The String representation of <code>value</code>.

@@ -30,4 +30,6 @@ package eu.tneitzel.argparse4j.inf;
 public interface ArgumentGroup extends ArgumentContainer {
     @Override
     ArgumentGroup description(String description);
+    String getTitle();
+    String getDescription();
 }

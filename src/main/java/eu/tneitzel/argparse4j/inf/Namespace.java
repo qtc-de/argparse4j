@@ -45,7 +45,7 @@ public class Namespace {
 
     /**
      * Construct this object using given {@code attrs}.
-     * 
+     *
      * @param attrs
      *            The attributes
      */
@@ -71,7 +71,7 @@ public class Namespace {
      * Returns attribute as {@link String} with given attribute name
      * {@code dest}. This method calls {@link Object#toString()} method of a
      * found object to get string representation unless object is {@code null}.
-     * 
+     *
      * @param dest
      *            The attribute name
      * @return The attribute value casted to {@link String}, or {@code null} if
@@ -89,7 +89,7 @@ public class Namespace {
 
     /**
      * Returns attribute as {@link Byte} with given attribute name {@code dest}.
-     * 
+     *
      * @param dest
      *            The attribute name
      * @return The attribute value casted to {@link Byte}, or {@code null} if it
@@ -102,7 +102,7 @@ public class Namespace {
     /**
      * Returns attribute as {@link Short} with given attribute name {@code dest}
      * .
-     * 
+     *
      * @param dest
      *            The attribute name
      * @return The attribute value casted to {@link Short}, or {@code null} if
@@ -115,7 +115,7 @@ public class Namespace {
     /**
      * Returns attribute as {@link Integer} with given attribute name
      * {@code dest}.
-     * 
+     *
      * @param dest
      *            The attribute name
      * @return The attribute value casted to {@link Integer}, or {@code null} if
@@ -127,7 +127,7 @@ public class Namespace {
 
     /**
      * Returns attribute as {@link Long} with given attribute name {@code dest}.
-     * 
+     *
      * @param dest
      *            The attribute name
      * @return The attribute value casted to {@link Long}, or {@code null} if it
@@ -140,7 +140,7 @@ public class Namespace {
     /**
      * Returns attribute as {@link Float} with given attribute name {@code dest}
      * .
-     * 
+     *
      * @param dest
      *            The attribute name
      * @return The attribute value casted to {@link Float}, or {@code null} if
@@ -153,7 +153,7 @@ public class Namespace {
     /**
      * Returns attribute as {@link Double} with given attribute name
      * {@code dest}.
-     * 
+     *
      * @param dest
      *            The attribute name
      * @return The attribute value casted to {@link Double}, or {@code null} if
@@ -166,7 +166,7 @@ public class Namespace {
     /**
      * Returns attribute as {@link Boolean} with given attribute name
      * {@code dest}.
-     * 
+     *
      * @param dest
      *            The attribute name
      * @return The attribute value casted to {@link Boolean}, or {@code null} if
@@ -197,7 +197,7 @@ public class Namespace {
      * <p>
      * The application code can freely use returned object.
      * </p>
-     * 
+     *
      * @return {@link Map} object holding attribute values.
      */
     public Map<String, Object> getAttrs() {

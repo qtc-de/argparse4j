@@ -82,7 +82,7 @@ public class CaseInsensitiveEnumStringArgumentTypeTest {
                     e.getMessage());
         }
     }
-    
+
     @Test
     public void testIgnoresLocaleOfParserForCaseInsensitivity() throws
             ArgumentParserException {

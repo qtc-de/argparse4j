@@ -45,14 +45,14 @@ import java.lang.annotation.Target;
 public @interface Arg {
     /**
      * The name of attribute to be assigned.
-     * 
+     *
      * @return The name of attribute
      */
     String dest() default "";
 
     /**
      * Set {@code true} if you want to ignore the error in assignment.
-     * 
+     *
      * @return {@code true} or {@code false}
      */
     boolean ignoreError() default false;

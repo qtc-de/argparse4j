@@ -44,7 +44,7 @@ import eu.tneitzel.argparse4j.inf.ArgumentType;
  * {@link ArgumentParserException}. This means it already act like a
  * {@link Argument#choices(Object...)}.
  * </p>
- * 
+ *
  * @deprecated Use {@link ReflectArgumentType} instead.
  * @param <T>
  *            Type of enum

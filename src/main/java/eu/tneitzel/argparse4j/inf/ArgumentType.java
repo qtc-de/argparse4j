@@ -25,7 +25,7 @@ package eu.tneitzel.argparse4j.inf;
 
 /**
  * This interface defines type conversion method.
- * 
+ *
  * @param <T>
  *            Type this object convert to.
  */
@@ -41,7 +41,7 @@ public interface ArgumentType<T> {
      * catch these exceptions and wrap them in {@link ArgumentParserException}
      * and give simple error message to explain what happened briefly.
      * </p>
-     * 
+     *
      * @param parser
      *            The parser.
      * @param arg

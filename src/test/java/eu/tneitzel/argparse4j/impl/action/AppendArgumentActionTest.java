@@ -39,14 +39,14 @@ import org.junit.Test;
 public class AppendArgumentActionTest {
 
     private static class MyMockArgument extends MockArgument {
-        
+
         @Override
         public String getDest() {
             return "dest";
         }
-        
+
     }
-    
+
     private MyMockArgument arg = new MyMockArgument();
     private AppendArgumentAction act = new AppendArgumentAction();
     private Map<String, Object> attrs;
@@ -54,7 +54,7 @@ public class AppendArgumentActionTest {
     public void setup() {
         attrs = new HashMap<>();
     }
-    
+
     @Test
     public void testRun() {
         act.run(null, arg, attrs, null, "hello");

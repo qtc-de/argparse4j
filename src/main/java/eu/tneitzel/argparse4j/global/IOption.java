@@ -5,6 +5,7 @@ import eu.tneitzel.argparse4j.global.exceptions.RequirementException;
 import eu.tneitzel.argparse4j.global.exceptions.RequirementOneOfException;
 import eu.tneitzel.argparse4j.global.modifiers.IArgumentModifier;
 import eu.tneitzel.argparse4j.global.modifiers.Type;
+import eu.tneitzel.argparse4j.impl.action.StoreTrueArgumentAction;
 import eu.tneitzel.argparse4j.inf.Argument;
 import eu.tneitzel.argparse4j.inf.ArgumentAction;
 import eu.tneitzel.argparse4j.inf.ArgumentGroup;
@@ -101,14 +102,23 @@ public interface IOption
     }
 
     /**
-     * The type of an IOption can be represented by an IArgumentModifier. The corresponding modifier
-     * is named Type and can be used to indicate the class of the option. This function iterates over
-     * all modifiers and returns the value of the Type modifier if present. If not, it returns null
+     * Return the underlying Java type of an option. If the argumentAction is StoreTrue, the type
+     * is always considered boolean. Otherwise, the type of an IOption can be represented by an
+     * IArgumentModifier. The corresponding modifier is named Type and can be used to indicate the
+     * class of the option. This function iterates over all modifiers and returns the value of the
+     * Type modifier if present. If no Type modifier is present, it is assumed that the argument
+     * type is String.
      *
-     * @return the class that is associated with the option (can be null)
+     * @return the class that is associated with the option (default is String for store or boolean
+     * for storeTrue arguments)
      */
     default Class<?> getType()
     {
+        if (getArgumentAction() instanceof StoreTrueArgumentAction)
+        {
+            return boolean.class;
+        }
+
         for (IArgumentModifier modifier : this.getArgumentModifiers())
         {
             if (modifier instanceof Type)
@@ -118,7 +128,7 @@ public interface IOption
             }
         }
 
-        return null;
+        return String.class;
     }
 
     /**

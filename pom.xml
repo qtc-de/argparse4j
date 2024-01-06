@@ -117,7 +117,7 @@
 
 	<scm>
 		<connection>scm:git:git://github.com/qtc-de/argparse4j.git</connection>
-		<developerConnection>scm:git:git@github.com:qtc-de/argparse4j.git</developerConnection>
+		<developerConnection>scm:git:ssh://github.com:qtc-de/argparse4j.git</developerConnection>
 		<url>https://github.com/qtc-de/argparse4j</url>
 	</scm>
 

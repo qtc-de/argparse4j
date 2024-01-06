@@ -11,8 +11,25 @@ import eu.tneitzel.argparse4j.inf.Subparsers;
  */
 public interface IAction
 {
+    /**
+     * Get the name of the action.
+     *
+     * @return name of the action
+     */
     public String getName();
+
+    /**
+     * Get the description of the action.
+     *
+     * @return the description of the action
+     */
     public String getDescription();
+
+    /**
+     * Get all options associated with an action.
+     *
+     * @return options associated with an action
+     */
     public IOption[] getOptions();
 
     /**

@@ -260,6 +260,11 @@ public class ArgumentParserBuilder {
         return this;
     }
 
+    /**
+     * Build the argument parser.
+     *
+     * @return newly created argument parser.
+     */
     public ArgumentParser build() {
         return new ArgumentParserImpl(config());
     }

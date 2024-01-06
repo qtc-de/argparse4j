@@ -22,14 +22,66 @@ import eu.tneitzel.argparse4j.inf.Namespace;
  */
 public interface IOption
 {
+    /**
+     * Get the name of an option.
+     *
+     * @return the name of an option
+     */
     public String getName();
+
+    /**
+     * Get the description of an option.
+     *
+     * @return the description of an option
+     */
     public String getDescription();
+
+    /**
+     * Get the associated {@link ArgumentAction} to an option.
+     *
+     * @return the associated {@link ArgumentAction}
+     */
     public ArgumentAction getArgumentAction();
+
+    /**
+     * Get the associated {@link IArgumentModifier} to an option.
+     *
+     * @return the associated {@link IArgumentModifier} as array
+     */
     public IArgumentModifier[] getArgumentModifiers();
 
+    /**
+     * Set the value of an option. IOption implementations are intended to be enums.
+     * Since the interface does not have access to the enum members, implementors need
+     * to implement the setValue method on their own.
+     *
+     * @param <T> the type of the value that is set
+     * @param value the value that is set
+     */
     public <T> void setValue(T value);
+
+    /**
+     * Get the value of an option. IOption implementations are intended to be enums.
+     * Since the interface does not have access to the enum members, implementors need
+     * to implement the getValue method on their own.
+     *
+     * @param <T> the type of the options value
+     * @return the options value
+     */
     public <T> T getValue();
-    public IOptionGroup getGroup();
+
+    /**
+     * Get the group associated with an option. By default, options do not have groups
+     * assigned and the functions returns zero. IOptionGroups are intended to be stored
+     * within the enum that implements IOption. Therefore, implementors need to re-implement
+     * this method on their own to get something useful done.
+     *
+     * @return the {@link IOptionGroup} associated to an option
+     */
+    default IOptionGroup getGroup()
+    {
+        return null;
+    }
 
     /**
      * Return true if the value associated with the option is null. This usually indicates that
@@ -178,7 +230,7 @@ public interface IOption
      *
      * @param <T> type of the option
      * @return the value that is assigned to the option (if any)
-     * @throws RequirementFailedException is raised if no value was set for this option
+     * @throws RequirementException is raised if no value was set for this option
      */
     default <T> T require() throws RequirementException
     {
@@ -196,8 +248,9 @@ public interface IOption
      * the options was set.
      *
      * @param <T> type of the option
+     * @param options list of additional options to require
      * @return the value that is assigned to one of the option (if any)
-     * @throws RequirementFailedException is raised if all options have no value assigned
+     * @throws RequirementException is raised if all options have no value assigned
      */
     static <T> T requireOneOf(IOption... options) throws RequirementException
     {
@@ -216,7 +269,8 @@ public interface IOption
      * Require that each of the specified options has an value assigned. If this is not true, an
      * RequirementFailedException is thrown.
      *
-     * @throws RequirementFailedException is raised if at least one option has no value assigned
+     * @param options list of additional options to require
+     * @throws RequirementException is raised if at least one option has no value assigned
      */
     static void requireAllOf(IOption... options) throws RequirementException
     {

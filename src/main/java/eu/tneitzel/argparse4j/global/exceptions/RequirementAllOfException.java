@@ -10,6 +10,11 @@ public class RequirementAllOfException extends RequirementException
 {
     private static final long serialVersionUID = 796880845020916653L;
 
+    /**
+     * Constructor containing the required options.
+     *
+     * @param options the required options
+     */
     public RequirementAllOfException(IOption[] options)
     {
         super(options);

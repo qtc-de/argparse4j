@@ -2,6 +2,12 @@
 
 ----
 
+[![maven CI](https://github.com/qtc-de/argparse4j/actions/workflows/maven-ci.yml/badge.svg?branch=master)](https://github.com/qtc-de/argparse4j/actions/workflows/maven-ci.yml)
+[![version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/qtc-de/argparse4j/releases)
+[![build-system](https://img.shields.io/badge/build%20system-maven-blue)](https://maven.apache.org/)
+![java-version](https://img.shields.io/badge/java-8%2b-blue)
+[![docs](https://img.shields.io/badge/docs-fa6b05)](https://qtc-de.github.io/argparse4j/)
+
 This repository contains a fork of the popular [argparse4j](https://github.com/argparse4j/argparse4j)
 Java library. It was created because the original project seems to be no longer maintained and attempts
 to contact the last known maintainer failed.
@@ -34,8 +40,8 @@ This section lists some of the features that are different from the original *ar
 For general documentation, it is recommended to visit the [website](https://argparse4j.github.io/)
 of the original project.
 
-* Add support for [SubparserGroups](https://github.com/qtc-de/argparse4j/blob/master/src/main/java/eu/tneitzel/argparse4j/internal/SubparserGroupImpl.java) (original [pull request](https://github.com/argparse4j/argparse4j/pull/136))
-* Add support for [global argument handling](https://github.com/qtc-de/argparse4j/tree/master/src/main/java/eu/tneitzel/argparse4j/global)
+* Add support for [SubparserGroups](https://qtc-de.github.io/argparse4j/eu/tneitzel/argparse4j/inf/SubparserGroup.html) (original [pull request](https://github.com/argparse4j/argparse4j/pull/136))
+* Add support for [global argument handling](https://qtc-de.github.io/argparse4j/eu/tneitzel/argparse4j/global/IOption.html)
 
 
 ### Acknowledgements

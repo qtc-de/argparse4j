@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2012 Tatsuhiro Tsujikawa
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,24 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.inf;
+
+public interface MutuallyExclusiveGroup extends ArgumentContainer {
+    @Override
+    MutuallyExclusiveGroup description(String description);
+
+    /**
+     * <p>
+     * If {@code true} is given, one of the arguments in this group must be
+     * specified otherwise error will be issued.
+     * </p>
+     * <p>
+     * The default value is {@code false}.
+     * </p>
+     *
+     * @param required
+     *            {@code true} or {@code false}
+     * @return this
+     */
+    MutuallyExclusiveGroup required(boolean required);
+}

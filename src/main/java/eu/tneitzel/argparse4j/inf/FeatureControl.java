@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2011 Tatsuhiro Tsujikawa
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,12 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.inf;
+
+/**
+ * This enum defines constants to be used throughout the argparse4j package.
+ */
+public enum FeatureControl {
+
+    SUPPRESS
+}

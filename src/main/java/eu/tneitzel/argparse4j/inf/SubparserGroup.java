@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2011 Tatsuhiro Tsujikawa
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,22 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.inf;
+
+/**
+ * This interface defines a method to conceptually group up {@link Subparser}
+ * objects.
+ */
+public interface SubparserGroup extends SubparserContainer {
+
+    /**
+     * <p>
+     * Sets the text to display as a title of sub-commands in the help message.
+     * </p>
+     *
+     * @param title
+     *            The text to display as a title of sub-commands
+     * @return this
+     */
+    SubparserGroup title(String title);
+}

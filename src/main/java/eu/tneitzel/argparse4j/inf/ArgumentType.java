@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2011 Tatsuhiro Tsujikawa
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,37 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.inf;
+
+/**
+ * This interface defines type conversion method.
+ *
+ * @param <T>
+ *            Type this object convert to.
+ */
+public interface ArgumentType<T> {
+
+    /**
+     * <p>
+     * Converts {@code value} to appropriate type.
+     * </p>
+     * <p>
+     * If the objects derived from {@link RuntimeException} are thrown in
+     * conversion because of invalid input from command line, subclass must
+     * catch these exceptions and wrap them in {@link ArgumentParserException}
+     * and give simple error message to explain what happened briefly.
+     * </p>
+     *
+     * @param parser
+     *            The parser.
+     * @param arg
+     *            The argument this type attached to.
+     * @param value
+     *            The attribute value.
+     * @return Converted object.
+     * @throws ArgumentParserException
+     *             If conversion fails.
+     */
+    T convert(ArgumentParser parser, Argument arg, String value)
+            throws ArgumentParserException;
+}

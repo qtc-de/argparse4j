@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2011 Tatsuhiro Tsujikawa
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,30 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.helper;
+
+/**
+ * <p>
+ * This interface abstracts the way of counting text width.
+ * </p>
+ *
+ * <p>
+ * Since argparse4j is command line argument parser package and it is intended
+ * to be used in terminal emulator and the terminal emulator in general uses
+ * fixed width fonts, the meaning of "width" here is given text consumes how
+ * many fixed character width. For string consisting only with ascii latin
+ * characters, it will be the same as the number of characters in given text.
+ * But for CJK characters are concerned this is not the case.
+ * </p>
+ */
+public interface TextWidthCounter {
+
+    /**
+     * Counts given text consumes how many fixed character width.
+     *
+     * @param text
+     *            The text to inspect.
+     * @return The computed value.
+     */
+    int width(String text);
+}

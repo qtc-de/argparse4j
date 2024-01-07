@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2011 Tatsuhiro Tsujikawa
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,22 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.helper;
+
+import static java.util.Arrays.asList;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ReflectHelperTest {
+
+    @Test
+    public void testList2Array() {
+        int[] a1 = (int[]) ReflectHelper.list2Array(int[].class, asList(1, 2, 3));
+        assertArrayEquals(new int[] { 1, 2, 3 }, a1);
+        int[][] a2 = (int[][]) ReflectHelper.list2Array(int[][].class,
+                asList(asList(1, 2), asList(3, 4)));
+        assertArrayEquals(
+                new int[][] { new int[] { 1, 2 }, new int[] { 3, 4 } }, a2);
+    }
+}

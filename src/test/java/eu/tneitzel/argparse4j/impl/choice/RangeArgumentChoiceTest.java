@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2011 Tatsuhiro Tsujikawa
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,40 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.impl.choice;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class RangeArgumentChoiceTest {
+
+    private RangeArgumentChoice<Integer> choice = new RangeArgumentChoice<>(0, 255);
+
+    @Test
+    public void testContains() {
+        assertFalse(choice.contains(-1));
+        assertTrue(choice.contains(0));
+        assertTrue(choice.contains(10));
+        assertTrue(choice.contains(255));
+        assertFalse(choice.contains(256));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testContainsWithWrongType() {
+        choice.contains("10");
+    }
+
+    @Test
+    public void testTextualFormat() {
+        assertEquals("{0..255}", choice.textualFormat());
+        assertEquals("{0.3..0.9}", new RangeArgumentChoice<>(0.3, 0.9).textualFormat());
+        assertEquals("{a..z}", new RangeArgumentChoice<>("a", "z").textualFormat());
+    }
+
+    @Test
+    public void testToString() {
+        assertEquals("{0..255}", choice.toString());
+    }
+
+}

@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2013 Adam Parkin
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,27 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.helper;
+
+import eu.tneitzel.argparse4j.inf.ArgumentParser;
+import eu.tneitzel.argparse4j.inf.ArgumentParserException;
+
+/**
+ * <p>
+ * HelpScreenException is a subclass of ArgumentParserException. It is used
+ * internally, and is thrown when help option is invoked.
+ * </p>
+ * <p>
+ * <strong>The application code should not use this class directly.</strong>
+ * </p>
+ *
+ * @since 0.8.0
+ */
+public class HelpScreenException extends ArgumentParserException {
+
+    private static final long serialVersionUID = -7303433847334132539L;
+
+    public HelpScreenException(ArgumentParser parser) {
+        super("Help Screen", parser);
+    }
+}

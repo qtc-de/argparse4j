@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2011-2021 The contributors: https://github.com/argparse4j/argparse4j/graphs/contributors
- * Copyright (C) 2023-2024 The contributors: https://github.com/qtc-de/argparse4j/graphs/contributors
+ * Copyright (C) 2011 Tatsuhiro Tsujikawa
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -22,3 +21,26 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package eu.tneitzel.argparse4j.internal;
+
+import eu.tneitzel.argparse4j.inf.ArgumentParser;
+import eu.tneitzel.argparse4j.inf.ArgumentParserException;
+
+/**
+ * Exception thrown when unrecognized argument is encountered.
+ */
+public class UnrecognizedArgumentException extends ArgumentParserException {
+
+    private static final long serialVersionUID = -256412358164687976L;
+    private final String argument_;
+
+    public UnrecognizedArgumentException(String message, ArgumentParser parser,
+            String argument) {
+        super(message, parser);
+        argument_ = argument;
+    }
+
+    public String getArgument() {
+        return argument_;
+    }
+}

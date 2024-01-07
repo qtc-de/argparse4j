@@ -34,6 +34,9 @@ This section lists some of the features that are different from the original *ar
 For general documentation, it is recommended to visit the [website](https://argparse4j.github.io/)
 of the original project.
 
+* Add support for [SubparserGroups](https://github.com/qtc-de/argparse4j/blob/master/src/main/java/eu/tneitzel/argparse4j/internal/SubparserGroupImpl.java) (original [pull request](https://github.com/argparse4j/argparse4j/pull/136))
+* Add support for [global argument handling](https://github.com/qtc-de/argparse4j/tree/master/src/main/java/eu/tneitzel/argparse4j/global)
+
 
 ### Acknowledgements
 

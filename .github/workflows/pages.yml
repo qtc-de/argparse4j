@@ -1,12 +1,9 @@
 name: Publish JavaDoc
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - src/**
-      - .github/workflows/pages.yml
+  release:
+    types:
+      - created
 
 permissions:
   contents: read

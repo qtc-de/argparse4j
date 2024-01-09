@@ -41,6 +41,6 @@ public interface IAction
     default void addSuparser(Subparsers argumentParser)
     {
         Subparser parser = argumentParser.addParser(getName()).help(getDescription());
-        GlobalOption.addOptions(parser, this, getOptions());
+        GlobalOption.addOptions(parser, this);
     }
 }

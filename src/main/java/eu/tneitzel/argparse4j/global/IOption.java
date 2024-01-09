@@ -71,6 +71,24 @@ public interface IOption
     public <T> T getValue();
 
     /**
+     * Returns the option name with all leading dashes being removed. Other dashes are
+     * replaced by underscores.
+     *
+     * @return plain option name
+     */
+    default String getPlainName()
+    {
+        String name = getName();
+
+        while (name.startsWith("-"))
+        {
+            name = name.replaceFirst("-", "");
+        }
+
+        return name.replace("-", "_");
+    }
+
+    /**
      * Get the group associated with an option. By default, options do not have groups
      * assigned and the functions returns zero. IOptionGroups are intended to be stored
      * within the enum that implements IOption. Therefore, implementors need to re-implement
@@ -115,9 +133,16 @@ public interface IOption
      *
      * @return true if boolean option is true
      */
-    default boolean getBool()
+    default <T> boolean getBool()
     {
-        return (boolean)getValue();
+        T value = getValue();
+
+        if (value == null)
+        {
+            return false;
+        }
+
+        return Boolean.parseBoolean(value.toString());
     }
 
     /**
@@ -149,7 +174,7 @@ public interface IOption
      */
     default <T> void setValue(Namespace args, T def)
     {
-        T value = args.get(this.getName().replaceFirst("--", "").replace("-", "_"));
+        T value = args.get(getPlainName());
         this.setValue(value, def);
     }
 

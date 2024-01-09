@@ -35,11 +35,11 @@ public class GlobalOption
 
         for (IOption option : options)
         {
-            String configValue = config.getProperty(option.getName().toLowerCase());
+            String configValue = config.getProperty(option.getPlainName());
 
             if (configValue != null && !configValue.isEmpty())
             {
-                Class<?> optionType = option.getClass();
+                Class<?> optionType = option.getType();
 
                 if (optionType == Integer.class)
                 {
@@ -74,11 +74,10 @@ public class GlobalOption
      *
      * @param parser the parser to add the options to
      * @param action the associated action (can be null)
-     * @param options the options to add to the parser
      */
-    public static void addOptions(ArgumentParser parser, IAction action, IOption... options)
+    public static void addOptions(ArgumentParser parser, IAction action)
     {
-        for (IOption option : options)
+        for (IOption option : action.getOptions())
         {
             option.addOption(parser, action);
         }

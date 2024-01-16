@@ -33,6 +33,19 @@ public interface IAction
     public IOption[] getOptions();
 
     /**
+     * Get nested actions that should be available when using this action.
+     * The actual actions are returned within an ActionContext. This is required
+     * to configure things like the associated meta variable or destination within
+     * the argument parser.
+     *
+     * @return ActionContext containing the nested actions
+     */
+    default ActionContext getSubActions()
+    {
+        return null;
+    }
+
+    /**
      * Add a new subparser for the action and assign all options associated with the
      * action to the new subparser.
      *
@@ -42,5 +55,12 @@ public interface IAction
     {
         Subparser parser = argumentParser.addParser(getName()).help(getDescription());
         GlobalOption.addOptions(parser, this);
+
+        ActionContext ctx = getSubActions();
+
+        if (ctx != null)
+        {
+            ctx.addSubparsers(parser);
+        }
     }
 }

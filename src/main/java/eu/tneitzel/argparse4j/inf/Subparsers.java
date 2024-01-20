@@ -113,4 +113,22 @@ public interface Subparsers extends SubparserContainer {
      * @return new created SubparserGroup instance
      */
     SubparserGroup addSubparserGroup();
+
+    /**
+     * <p>
+     * Get an existing SubparserGroup form the parser.
+     * </p>
+     *
+     * @return SubparserGroup for the specified title (or null)
+     */
+    SubparserGroup getSubparserGroup(String title);
+
+    /**
+     * <p>
+     * Get an existing SubparserGroup form the parser or create a new one.
+     * </p>
+     *
+     * @return SubparserGroup for the specified title
+     */
+    SubparserGroup getOrCreateSubparserGroup(String title);
 }

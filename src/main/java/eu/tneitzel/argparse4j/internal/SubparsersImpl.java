@@ -192,27 +192,70 @@ public final class SubparsersImpl extends SubparserGroupImpl implements Subparse
      * @param format_width
      *            column width
      */
-    void printSubparserHelp(PrintWriter writer, int format_width) {
-        TextHelper.printHelp(writer, formatShortSyntax(), help_,
-                mainParser_.getTextWidthCounter(), format_width);
-        for (Map.Entry<String, SubparserImpl> entry : parsers_.entrySet()) {
+    void printSubparserHelp(PrintWriter writer, int format_width)
+    {
+        boolean printed = false;
+        TextHelper.printHelp(writer, formatShortSyntax(), help_, mainParser_.getTextWidthCounter(), format_width);
+
+        for (Map.Entry<String, SubparserImpl> entry : parsers_.entrySet())
+        {
             // Don't generate help for aliases.
             if (entry.getValue().getHelpControl() != FeatureControl.SUPPRESS &&
-                    entry.getKey().equals(entry.getValue().getCommand())) {
+                    entry.getKey().equals(entry.getValue().getCommand()))
+            {
                 entry.getValue().printSubparserHelp(writer, format_width);
+                printed = true;
             }
         }
+
         Iterator<SubparserGroupImpl> iterator = subparsers_.iterator();
-        while( iterator.hasNext() ) {
+
+        if (printed && iterator.hasNext())
+        {
+            writer.println();
+        }
+
+        while (iterator.hasNext())
+        {
             iterator.next().printSubparserHelp(writer, format_width);
 
-            if( iterator.hasNext() )
+            if (iterator.hasNext())
+            {
                 writer.println();
+            }
         }
     }
 
     private String localize(String messageKey) {
         return MessageLocalization.localize(
                 mainParser_.getConfig().getResourceBundle(), messageKey);
+    }
+
+    @Override
+    public SubparserGroup getSubparserGroup(String title)
+    {
+        for (SubparserGroupImpl group : subparsers_)
+        {
+            if (group.getTitle().equals(title))
+            {
+                return group;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public SubparserGroup getOrCreateSubparserGroup(String title)
+    {
+        for (SubparserGroupImpl group : subparsers_)
+        {
+            if (group.getTitle().equals(title))
+            {
+                return group;
+            }
+        }
+
+        return this.addSubparserGroup().title(title);
     }
 }

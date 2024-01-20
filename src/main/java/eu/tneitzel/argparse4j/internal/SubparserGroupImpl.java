@@ -95,7 +95,7 @@ public class SubparserGroupImpl implements SubparserGroup {
 
     void printSubparserHelp(PrintWriter writer, int format_width) {
         if (!title_.isEmpty()) {
-            writer.println(" " + title_);
+            writer.println("  " + title_);
         }
         for (Map.Entry<String, SubparserImpl> entry : parsers_.entrySet()) {
             // Don't generate help for aliases.

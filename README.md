@@ -3,7 +3,7 @@
 ----
 
 [![maven CI](https://github.com/qtc-de/argparse4j/actions/workflows/maven-ci.yml/badge.svg?branch=master)](https://github.com/qtc-de/argparse4j/actions/workflows/maven-ci.yml)
-[![version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/qtc-de/argparse4j/releases)
+[![version](https://img.shields.io/badge/version-1.2.0-blue)](https://github.com/qtc-de/argparse4j/releases)
 [![build-system](https://img.shields.io/badge/build%20system-maven-blue)](https://maven.apache.org/)
 ![java-version](https://img.shields.io/badge/java-8%2b-blue)
 [![docs](https://img.shields.io/badge/docs-fa6b05)](https://qtc-de.github.io/argparse4j/)
@@ -27,7 +27,7 @@ If you want to use this fork of *argparse4j*, just use the following dependency 
 <dependency>
   <groupId>eu.tneitzel</groupId>
   <artifactId>argparse4j</artifactId>
-  <version>1.0.0</version>
+  <version>1.2.0</version>
 </dependency>
 ```
 

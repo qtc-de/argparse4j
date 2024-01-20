@@ -1,7 +1,7 @@
 package eu.tneitzel.argparse4j.global;
 
 import eu.tneitzel.argparse4j.inf.Subparser;
-import eu.tneitzel.argparse4j.inf.Subparsers;
+import eu.tneitzel.argparse4j.inf.SubparserContainer;
 
 /**
  * IAction represents a command line subcommand. IActions can be used to generate new subparsers
@@ -33,6 +33,18 @@ public interface IAction
     public IOption[] getOptions();
 
     /**
+     * Actions used within the same parser can be grouped as it is the case
+     * for options. If an action is supposed to be grouped, it should return
+     * the corresponding IActionGroup from this function.
+     *
+     * @return IActionGroup for the action
+     */
+    default IActionGroup getGroup()
+    {
+        return null;
+    }
+
+    /**
      * Get nested actions that should be available when using this action.
      * The actual actions are returned within an ActionContext. This is required
      * to configure things like the associated meta variable or destination within
@@ -51,7 +63,7 @@ public interface IAction
      *
      * @param argumentParser the parser to add the new subparser to
      */
-    default void addSuparser(Subparsers argumentParser)
+    default void addSuparser(SubparserContainer argumentParser)
     {
         Subparser parser = argumentParser.addParser(getName()).help(getDescription());
         GlobalOption.addOptions(parser, this);

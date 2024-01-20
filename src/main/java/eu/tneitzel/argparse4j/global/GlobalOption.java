@@ -4,6 +4,8 @@ import java.util.Properties;
 
 import eu.tneitzel.argparse4j.inf.ArgumentParser;
 import eu.tneitzel.argparse4j.inf.Namespace;
+import eu.tneitzel.argparse4j.inf.SubparserContainer;
+import eu.tneitzel.argparse4j.inf.Subparsers;
 
 /**
  * The GlobalOption class contains methods to add and assign global options from and to an
@@ -70,16 +72,39 @@ public class GlobalOption
     }
 
     /**
-     * Add a list of options to an argument parser.
+     * Add all options from an action to an argument parser.
      *
      * @param parser the parser to add the options to
-     * @param action the associated action (can be null)
+     * @param action the action to obtain the options from
      */
     public static void addOptions(ArgumentParser parser, IAction action)
     {
         for (IOption option : action.getOptions())
         {
             option.addOption(parser, action);
+        }
+    }
+
+    /**
+     * Add a list of IAction objects to an Subparsers container. This function creates a new
+     * parser entry for each action and respects eventually configured SubparserGroups.
+     *
+     * @param container Subparsers container to create new action entries in
+     * @param actions IAction objects to include into the Subparsers container
+     */
+    public static void addActions(Subparsers container, IAction... actions)
+    {
+        for (IAction subAction : actions)
+        {
+            IActionGroup actionGroup = subAction.getGroup();
+            SubparserContainer parserGroup = container;
+
+            if (actionGroup != null)
+            {
+                parserGroup = container.getOrCreateSubparserGroup(actionGroup.getName());
+            }
+
+            subAction.addSuparser(parserGroup);
         }
     }
 }

@@ -99,11 +99,7 @@ public class ActionContext
     public Subparsers addSubparsers(ArgumentParser parser)
     {
         Subparsers nestedParser = parser.addSubparsers().help(getHelpText()).metavar(getMetaVar()).dest(getDest());
-
-        for (IAction subAction : getActions())
-        {
-            subAction.addSuparser(nestedParser);
-        }
+        GlobalOption.addActions(nestedParser, actions);
 
         return nestedParser;
     }

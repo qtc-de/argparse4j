@@ -4,7 +4,6 @@ import java.util.Properties;
 
 import eu.tneitzel.argparse4j.inf.ArgumentParser;
 import eu.tneitzel.argparse4j.inf.Namespace;
-import eu.tneitzel.argparse4j.inf.SubparserContainer;
 import eu.tneitzel.argparse4j.inf.Subparsers;
 
 /**
@@ -96,15 +95,7 @@ public class GlobalOption
     {
         for (IAction subAction : actions)
         {
-            IActionGroup actionGroup = subAction.getGroup();
-            SubparserContainer parserGroup = container;
-
-            if (actionGroup != null)
-            {
-                parserGroup = container.getOrCreateSubparserGroup(actionGroup.getName());
-            }
-
-            subAction.addSuparser(parserGroup);
+            subAction.addSuparser(container);
         }
     }
 }

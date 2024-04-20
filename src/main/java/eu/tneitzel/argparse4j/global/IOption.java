@@ -23,7 +23,7 @@ import eu.tneitzel.argparse4j.inf.Namespace;
 public interface IOption
 {
     /**
-     * Get the name of an option.
+     * Get the name of an option as it is supposed to be represented on a command line.
      *
      * @return the name of an option
      */
@@ -69,6 +69,14 @@ public interface IOption
      * @return the options value
      */
     public <T> T getValue();
+
+    /**
+     * Returns the name of the enum entry that represents the option. This is useful
+     * to uniquely identify an option.
+     *
+     * @return enum entry name of the current option.
+     */
+    public String getEnumName();
 
     /**
      * Returns the option name with all leading dashes being removed. Other dashes are

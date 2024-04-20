@@ -4,7 +4,6 @@ import java.util.Properties;
 
 import eu.tneitzel.argparse4j.inf.ArgumentParser;
 import eu.tneitzel.argparse4j.inf.Namespace;
-import eu.tneitzel.argparse4j.inf.SubparserContainer;
 import eu.tneitzel.argparse4j.inf.Subparsers;
 
 /**
@@ -22,7 +21,8 @@ public class GlobalOption
     /**
      * Take an argparse4j namespace and assign the contained options to the specified list of
      * IOption instances. Optionally, a Properties object can be provided that is used to set
-     * default values.
+     * default values. Properties are looked up using the enum entry name obtained via getEnumName
+     * from the IOption instances.
      *
      * @param args argparse4j namespace that contains the parsed command line
      * @param options options to assign from the command line
@@ -37,7 +37,7 @@ public class GlobalOption
 
         for (IOption option : options)
         {
-            String configValue = config.getProperty(option.getPlainName());
+            String configValue = config.getProperty(option.getEnumName());
 
             if (configValue != null && !configValue.isEmpty())
             {
@@ -96,15 +96,7 @@ public class GlobalOption
     {
         for (IAction subAction : actions)
         {
-            IActionGroup actionGroup = subAction.getGroup();
-            SubparserContainer parserGroup = container;
-
-            if (actionGroup != null)
-            {
-                parserGroup = container.getOrCreateSubparserGroup(actionGroup.getName());
-            }
-
-            subAction.addSuparser(parserGroup);
+            subAction.addSuparser(container);
         }
     }
 }

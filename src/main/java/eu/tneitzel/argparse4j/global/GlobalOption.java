@@ -36,7 +36,7 @@ public class GlobalOption
 
         for (IOption option : options)
         {
-            String configValue = config.getProperty(option.getPlainName());
+            String configValue = config.getProperty(option.getEnumName());
 
             if (configValue != null && !configValue.isEmpty())
             {
